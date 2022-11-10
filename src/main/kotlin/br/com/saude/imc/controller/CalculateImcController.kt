@@ -1,7 +1,7 @@
 package br.com.saude.imc.controller
 
-import br.com.saude.imc.dto.ImcForm
-import br.com.saude.imc.model.User
+import br.com.saude.imc.dto.ImcRequest
+import br.com.saude.imc.dto.ImcResponse
 import br.com.saude.imc.service.CalculateImcService
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
@@ -15,7 +15,7 @@ class CalculateImcController (
         ){
 
     @PostMapping
-    fun calculate(@RequestBody imcForm: ImcForm): User {
-        return service.calculate(imcForm)
+    fun calculate(@RequestBody imcRequest: ImcRequest): ImcResponse {
+        return service.calculate(imcRequest)
     }
 }

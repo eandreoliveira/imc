@@ -1,6 +1,6 @@
-package br.com.saude.imc.model
+package br.com.saude.imc.dto
 
-data class User(
+data class ImcResponse(
     val imc: Double,
 
 ) {

@@ -1,6 +1,6 @@
 package br.com.saude.imc.dto
 
-data class ImcForm(
+data class ImcRequest(
     val peso: Double,
     val altura: Double
 )
