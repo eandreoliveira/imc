@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping("/calculate")
+@RequestMapping("/imc")
 class CalculateImcController (
     private val service: CalculateImcService
         ){
 
-    @PostMapping
+    @PostMapping("/calculate")
     fun calculate(@RequestBody imcRequest: ImcRequest): ImcResponse {
         return service.calculate(imcRequest)
     }
