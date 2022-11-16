@@ -23,7 +23,8 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	implementation ("io.github.microutils:kotlin-logging-jvm:2.1.23")
 	testImplementation("ch.qos.logback:logback-classic:1.2.6")
-
+	implementation("io.springfox:springfox-swagger2:2.9.2")
+	implementation("io.springfox:springfox-swagger-ui:2.9.2")
 }
 
 tasks.withType<KotlinCompile> {
