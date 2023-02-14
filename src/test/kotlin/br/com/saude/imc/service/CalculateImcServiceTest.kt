@@ -20,4 +20,11 @@ class CalculateImcServiceTest {
         val imcResponse = calculateImcService.calculate(imcRequest)
         assertEquals(imcResponse.getmensagem(), "Peso Normal")
     }
+
+    @Test
+    fun deveRetornarValorCorretoImc() {
+        val imcRequest = ImcRequest(80.0, 1.85)
+        val imcResponse = calculateImcService.calculate(imcRequest)
+        assertEquals(imcResponse.imc, 23.37)
+    }
 }
