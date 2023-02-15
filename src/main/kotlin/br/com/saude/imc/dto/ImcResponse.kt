@@ -1,7 +1,8 @@
 package br.com.saude.imc.dto
 
 data class ImcResponse(
-    val imc: Double,
+    val nome: String,
+    val imc: Double
 
 ) {
     fun getmensagem() = when {
