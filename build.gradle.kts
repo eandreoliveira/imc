@@ -28,6 +28,7 @@ dependencies {
 	implementation("io.springfox:springfox-swagger-ui:2.9.2")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	runtimeOnly("com.h2database:h2")
+	implementation("org.flywaydb:flyway-core")
 
 	testImplementation("com.ninja-squad:springmockk:4.0.0")
 }
