@@ -31,16 +31,13 @@ class CalculateImcService(
         return imcNearValue
     }
 
-    fun listar(): List<ImcResponse> {
-        return repository.findAll().stream().map {t ->
-            mapToImcResponse(t)
-        }.collect(Collectors.toList())
-    }
+    fun listar(nome: String?): List<ImcResponse> = when (nome) {
+        null -> repository.findAll()
+        else -> repository.findByNome(nome)
+    }.map {mapToImcResponse(it)}
 
-    fun buscarPorId(id: Long): ImcResponse {
-        val imc = repository.findById(id)
-            .orElseThrow{ NotFoundException(notFoundMessage) }
-        return mapToImcResponse(imc)
-    }
+    fun buscarPorId(id: Long): ImcResponse = repository.findById(id)
+        .orElseThrow{ NotFoundException(notFoundMessage) }
+        .let { mapToImcResponse(it) }
 
 }
